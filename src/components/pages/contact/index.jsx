@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 const Contact = ({bgColor,setColor,color,setBgColor,btColor,wtColor}) => {
 
   useEffect(() => {
-    setColor('white');
+    setColor('whitesmoke');
     setBgColor(btColor)
   }, [])
 

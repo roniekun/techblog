@@ -19,8 +19,6 @@ useEffect(() => {
   else {
     gsap.to(content.current,{opacity: 0, y:' 75%'})
     gsap.to(container.current,{  y: '-100%'})
-    setColor('black')
-    setBgColor('whitesmoke')
   }
   return () => {
     null

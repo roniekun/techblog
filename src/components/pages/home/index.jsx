@@ -104,8 +104,12 @@ const Home = ({setColor, color, setBgColor, bgColor, wtColor,btColor}) => {
       <p>Doloribus modi accusamus recusandae quibusdam eligendi assumenda numquam facilis ad voluptatem reprehenderit.
          Ullam cupiditate aliquid alias, voluptates rerum voluptate! Iure, omnis labore!</p>
     <div className={styles.btnContainer}>
-    <button onClick={handleExplore} className={styles. explore}> Explore</button>
-      <NavLink to='/contact'onClick={()=> {handleContact()}} className={styles. contact}> Contact</NavLink>
+    <button onClick={handleExplore} className={styles. explore}>
+       Explore
+    </button>
+      <NavLink to='/contact'onClick={()=> {handleContact()}} className={styles. contact}>
+         Get in touch
+         </NavLink>
     </div>
     </div>
     </div>
