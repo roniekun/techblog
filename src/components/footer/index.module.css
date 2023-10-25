@@ -93,6 +93,7 @@
 
     .itemContainer{
         flex-direction: column;
+        gap: 20px;
         
         .emailContainer{
             align-items: flex-start;
