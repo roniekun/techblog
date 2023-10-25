@@ -17,7 +17,7 @@ useEffect(() => {
   setBgColor('black')
   }
   else {
-    gsap.to(content.current,{opacity: 0, y:' 75%'})
+    gsap.to(content.current,{opacity: 0, y:' 85%'})
     gsap.to(container.current,{  y: '-100%'})
   }
   return () => {
@@ -54,7 +54,7 @@ useEffect(() => {
                                       gap: '10px',
                                        flexWrap: 'wrap',
                                       height: 'fit-content'}}
-      linkProps={{fontSize:  isSmallScreen ? '16px': '20px', 
+      linkProps={{fontSize:  isSmallScreen ? '14px': '20px', 
                             width: 'fit-content',
                             height: 'fit-content',
                             textTransform: 'uppercase',

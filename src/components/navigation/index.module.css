@@ -3,17 +3,17 @@
     position: fixed;
     height: 100vh;
     top: 0;
-    padding-top: 60px;
     width: 100vw;
     transform: translateY(-100%);
     background-color: black;
     z-index: 99;
+    padding-top: 5%;
     overflow: hidden;
 
     .content{
         display: flex;
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-direction: column;
         padding-block: 10%;
         align-items: center;
