@@ -1,0 +1,90 @@
+.container{
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    padding-top: 60px;
+    width: 100vw;
+    transform: translateY(-100%);
+    background-color: #181818;
+    z-index: 99;
+    overflow: hidden;
+
+    .content{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        padding-block: 10%;
+        align-items: center;
+        height: 100%;
+        padding: 10%;
+        overflow: hidden;
+
+    & .linksContainer{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            gap: 20px;
+            overflow: hidden;
+
+    & .title{
+        color: gray;
+        font-size: 14px;
+        font-weight: 500;
+        padding-block: 5%;
+        position: relative;
+        font-family: sans-serif;
+        text-transform: uppercase;
+
+    }
+    & .title::after{
+            content: '';
+            left: 0;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            background-color: lightgray;
+            height: 1px;
+    
+    }
+    }
+
+     & .socialContainer{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100px;
+            position: relative;
+            width: 100%;
+            align-self: flex-end;
+            height: 15%;
+            overflow-y: hidden;
+            
+        
+        &   .title{
+                color: gray;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                margin-block: 5%;
+            }
+    
+        }
+       & .socialContainer::before{
+            content: '';
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            background-color: lightgray;
+            height: 1px;
+        }
+        
+    }
+   
+    
+}

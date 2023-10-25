@@ -1,0 +1,62 @@
+.socialLinksContainer{
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+.iconContainer{
+  display: flex;
+  position: relative;
+  height: fit-content;
+  width:fit-content;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.socialLink{
+   font-size: 18px;
+   transition: .3s;
+   text-decoration: none;
+   user-select: none;
+}
+
+.iconContainer svg {
+    width: 1.4vw;
+    height: 1.4vw;
+    opacity: 1;
+    transition: .3s;
+    margin: 0;
+  }
+
+.iconContainer svg:hover{
+
+    transition: .3s;
+    filter: brightness(90%);
+}
+
+.socialLink:hover{
+     filter: brightness(90%);
+
+}
+  
+@media (max-width: 1024px) {
+
+.socialLinksContainer{
+    position: relative;
+    width: 100%;
+}
+
+.iconContainer{
+  padding: 0px 0px 0px 0px;
+}
+
+.iconContainer svg {
+  width: 18px;
+  height:18px;
+}
+}
