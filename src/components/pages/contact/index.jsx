@@ -4,10 +4,10 @@ import {motion} from 'framer-motion'
 
 const Contact = ({bgColor,setColor,color,setBgColor,btColor,wtColor}) => {
 
-  // useEffect(() => {
-  //   setColor('white');
-  //   setBgColor(btColor)
-  // }, [])
+  useEffect(() => {
+    setColor('white');
+    setBgColor(btColor)
+  }, [])
 
   return (
     <motion.div 
@@ -18,7 +18,7 @@ const Contact = ({bgColor,setColor,color,setBgColor,btColor,wtColor}) => {
     className={styles.container}>
       <div className={styles.secta}>
         <h1>
-          get in touch
+          Get in touch
         </h1>
       </div>
       </motion.div>

@@ -12,7 +12,7 @@ const Footer = ({color, bgColor, setColor}) => {
      className={styles.container}>
         <div className={styles.sitemap}>
         <h4>Sitemap</h4>
-        <Navlinks linkProps={{fontSize: '18px',
+        <Navlinks linkProps={{fontSize: '16px',
                                                 color: 'whitesmoke',
                                                 textTransform: 'uppercase',
       }}
@@ -26,7 +26,7 @@ const Footer = ({color, bgColor, setColor}) => {
         containerProps={{gap:'14px', flexWrap: 'wrap'}}
           linkProps={{ color: 'whitesmoke',
                                 textTransform: 'uppercase',
-                                fontSize: '18px'}}
+                                fontSize: '16px'}}
           displayNames={true}/>
     
       </div>

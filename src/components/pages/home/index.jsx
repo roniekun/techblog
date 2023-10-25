@@ -2,7 +2,7 @@ import styles from './index.module.css';
 import data from './data';
 import { useState, useEffect, useRef} from 'react';
 import {motion} from 'framer-motion'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import Slideshow from '../../../assets/slideshow-fade';
 import Socials from '../../../assets/icons/soclals';
 import { gsap } from "gsap";
@@ -51,7 +51,10 @@ const Home = ({setColor, color, setBgColor, bgColor, wtColor,btColor}) => {
       behavior: "smooth"
     });
   }
-
+  
+  const handleContact = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+}
   // Animations
 
   
@@ -102,12 +105,10 @@ const Home = ({setColor, color, setBgColor, bgColor, wtColor,btColor}) => {
          Ullam cupiditate aliquid alias, voluptates rerum voluptate! Iure, omnis labore!</p>
     <div className={styles.btnContainer}>
     <button onClick={handleExplore} className={styles. explore}> Explore</button>
-      <button className={styles. explore}> Contact</button>
+      <NavLink to='/contact'onClick={()=> {handleContact()}} className={styles. contact}> Contact</NavLink>
     </div>
     </div>
     </div>
-
-
 
     <motion.div
       ref={sectb}

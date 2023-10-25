@@ -10,6 +10,7 @@ const Header = ({isMediumScreen, isToggleMenu, setToggleMenu,
     setToggleMenu(!isToggleMenu);
   }
   const handleScrollToTop = () => {
+    setToggleMenu(false)
     window.scrollTo(0, 0); // Scroll to the top of the page
   };
   return (
