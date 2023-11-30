@@ -13,6 +13,7 @@ import Product from '../pages/product'
 import Family from '../pages/family'
 
 const Main = ({setColor,
+                          isSmallScreen,
                           color,btColor,wtColor,
                           setBgColor,
                           bgColor}) => {
@@ -27,6 +28,7 @@ const Main = ({setColor,
                color={color}
                wtColor={wtColor}
                btColor={btColor}
+               isSmallScreen={isSmallScreen}
                setBgColor={setBgColor}
                bgColor={bgColor}/>}/>
 

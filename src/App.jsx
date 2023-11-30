@@ -3,7 +3,6 @@ import styles from './app.module.css'
 import Header from './components/header'
 import Main from './components/main'
 import Footer from './components/footer'
-import Navigation from './components/navigation'
 import Lenis from '@studio-freight/lenis'
 
 const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtColor, btColor}) => {
@@ -16,11 +15,14 @@ const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtC
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-  
+    const lenis = new Lenis()
+
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
+
     }
+    
     requestAnimationFrame(raf)
   }, [])
 
@@ -37,29 +39,14 @@ const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtC
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [isMediumScreen,isSmallScreen]);
-
-  console.log (height)
-  console.log (width)
+  }, [isMediumScreen,isSmallScreen,height, width]);
 
   return (
  
     <div
     ref={container}
-    style={{ width: `${width}px` }}
+    // style={{ width: `${width}px` }}
      className={styles.container} > 
-
-  <div className={styles.navigation}>
-  <Navigation
-  isMediumScreen={isMediumScreen}
-  setToggleMenu={setToggleMenu}
-  isSmallScreen={isSmallScreen}
-    isToggleMenu={isToggleMenu}
-    setColor={setColor}
-    color={color}
-    setBgColor={setBgColor}
-    bgColor={bgColor}/>
-  </div>
 
     <div  className={styles.header}> 
          <Header isMediumScreen={isMediumScreen}
@@ -73,6 +60,7 @@ const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtC
       <div className={styles.main}> 
      <Main setColor={setColor}
                   color={color}
+                  isSmallScreen={isSmallScreen}
                   setToggleMenu={setToggleMenu}
                   isToggleMenu={isToggleMenu}
                   setBgColor={setBgColor}
@@ -84,6 +72,7 @@ const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtC
       <Footer color={color} 
       bgColor={bgColor}
       setColor={setColor}
+      isMediumScreen={isMediumScreen}
       />
       </div>
     </div>

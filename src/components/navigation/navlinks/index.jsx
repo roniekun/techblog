@@ -1,30 +1,35 @@
-import links from "./data"
-import { NavLink, useNavigate } from "react-router-dom"
-import styles from './index.module.css'
+import React from 'react';
+import links from "./data";
+import { useNavigate } from "react-router-dom";
+import styles from './index.module.css';
+import { motion } from 'framer-motion';
 
-const Navlinks = ({linkProps, containerProps,setToggleMenu,isToggleMenu}) => {
+const Navlinks = ({ linkProps, containerProps, setToggleMenu, isToggleMenu }) => {
+  const navigate = useNavigate();
 
-const handleClick = (linkTo) => {
-    setTimeout(() => {
-        window.scrollTo({ top: 0 });
-        setToggleMenu(false);
-      }, 300);
-};
+  const handleClick = (link) => {
+    if (link) {
+      window.scrollTo({ top: 0 });
+      navigate(link);
+      setToggleMenu(false);
+    }
+  };
+
   return (
-  <div className={styles.container}
-  style={{...containerProps}}>
-    {links.map((link, index)=>(
-        <NavLink 
-        key={index} 
-        to={link.to}
-        onClick={handleClick}
-        className={styles.link}
-        style={{...linkProps}}>
-             {link.text}
-    </NavLink>
-    ))}
-  </div>
-  )
-}
+    <motion.div className={styles.container} style={containerProps}>
+      {links.map((link, index) => (
+        <motion.li
+          key={index}
+          whileHover={{ color: 'black', }}
+          className={styles.link}
+          style={linkProps}
+          onTap={() => handleClick(link.to)}
+        >
+          {link.text}
+        </motion.li>
+      ))}
+    </motion.div>
+  );
+};
 
-export default Navlinks
+export default Navlinks;

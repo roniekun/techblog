@@ -3,6 +3,7 @@
     align-items: flex-start;
     flex-direction: column;
     width: 100vw;
+    position: relative;
     justify-content: flex-start;
     gap: 14px;
     padding: 2em;
@@ -56,7 +57,7 @@
         align-items: center;
 
         & p{
-            text-transform: uppercase;
+            text-transform: lowercase;
         }
         & h4{
             color: gray;
@@ -78,7 +79,7 @@
 
     .date{
         align-self: center;
-        font-size: 16px;
+        font-size:  .7rem;
         margin: 0;
         font-weight: 500;
         color: gray;

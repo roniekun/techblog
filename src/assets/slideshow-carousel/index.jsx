@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.css';
 
-const Carousel = React.forwardRef(({ image, index, containerProps, onClick }, ref) => {
+const CarouselItem = React.forwardRef(({ image, index, containerProps, onClick }, ref) => {
   return (
     <div
       key={index}
@@ -15,4 +15,5 @@ const Carousel = React.forwardRef(({ image, index, containerProps, onClick }, re
   );
 });
 
-export default Carousel;
+
+export default CarouselItem;

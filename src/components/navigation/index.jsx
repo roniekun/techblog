@@ -1,36 +1,68 @@
 import { useEffect, useRef } from 'react'
 import styles from './index.module.css'
-import { gsap } from 'gsap'
 import Navlinks from './navlinks'
+import {motion} from 'framer-motion'
 import Socials from '../../assets/icons/soclals';
 
 const Navigation = ({isToggleMenu, setToggleMenu, isMediumScreen,
-   isSmallScreen , setColor, color, setBgColor, bgColor}) => {
+   isSmallScreen , setColor, color, setBgColor, bgColor,props}) => {
   const container = useRef(null);
   const content = useRef(null);
+  const {height , width} = props
 
-useEffect(() => {
-  if (isToggleMenu){
-  gsap.to(container.current,{y:'0%', height: '85%' })
-  gsap.to(content.current,{y: 0, opacity: 1,})
-  setColor('whitesmoke')
-  setBgColor('black')
+
+  const menu = {
+
+    open: {
+        height: window.innerHeight <= 500 ? '100vh' : 'auto' ,
+        width: isMediumScreen? '85vw' : '35vw', 
+        transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1]},
+        marginTop: 10,
+        zIndex: 99,
+         marginRight: isMediumScreen ? 0 : '5%',
+    },
+
+    closed: {
+        width: width,
+        height: height,
+        transition: { duration: 0.75, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1]},
+        zIndex: 9,
+        marginRight: isMediumScreen ? '5%' : '10%',
+        marginTop: isMediumScreen ? 15 : 20
+    }
+}
+
+const item = {
+  open: {
+      transition: {delay: .5, duration: .3},
+      opacity :1,
+  },
+
+  closed: {
+      opacity: 0,
+      delay: .5,
   }
-  else {
-    gsap.to(content.current,{opacity: 0, y:' 85%'})
-    gsap.to(container.current,{  y: '-100%'})
-  }
-  return () => {
-    null
-  }
-}, [isToggleMenu])
+}
 
   return (
-    <div 
+    <motion.nav
+    variants={menu}
+    animate={isToggleMenu ? "open" : "closed"}
+     initial="closed"
+     exit= "closed"
     ref={container}
+    style={{
+      height: height, 
+      width: width,
+      marginRight:  isMediumScreen ? '5%' : '10%', }}
     className={styles.container} >
-      <div className={styles.content}
-                ref={content}>  
+      <motion.div className={styles.content}
+                ref={content}
+                variants={item}
+                animate={isToggleMenu ? "open" : "closed"}
+                initial="closed"
+                exit= "closed"
+                >  
           <div className={styles.linksContainer}>
         <h5 className={styles.title}>Navigations</h5>
        < Navlinks
@@ -40,7 +72,8 @@ useEffect(() => {
                                         justifyContent: 'center',
                                         alignItems: 'center', 
                                         gap: '20px'}}
-        linkProps={{color: 'lightgray',
+        linkProps={{
+                            color: 'whitesmoke',
                             fontSize: isSmallScreen ? '32px' : '45px',
                             fontWeight: '450',
                             fontFamily: 'DM Serif Text, sans-serif',
@@ -54,14 +87,14 @@ useEffect(() => {
                                       gap: '10px',
                                        flexWrap: 'wrap',
                                       height: 'fit-content'}}
-      linkProps={{fontSize:  isSmallScreen ? '14px': '20px', 
+      linkProps={{fontSize:  '1rem', 
                             width: 'fit-content',
                             height: 'fit-content',
                             textTransform: 'uppercase',
                             color: 'whitesmoke' }} />
       </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.nav>
   )
 }
 

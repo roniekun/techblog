@@ -13,18 +13,13 @@
         display: flex;
         width: 100vw;
         position: fixed;
-        z-index: 999;
-    }
-
-    .navigation{
-        width: auto;
-        height: auto;
+        z-index: 2;
     }
 
     .main{
         grid-area: three;
         position: relative;
-        height: 100%;
+        height: auto;
         width:100vw;
 
     }
@@ -44,13 +39,13 @@
 }
 
 @media(max-width: 1024px){
+
     .container{
         display: flex;
         flex-direction: column;
 
         .main{
             width: 100vw;
-            min-height: 100vh;
         }
 
         .header{

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { DataContext, DataProvider } from './context/DataContext.jsx'
-// import * as serviceWorker from './serviceWorker';
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -19,5 +18,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </DataContext.Consumer>
     </DataProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

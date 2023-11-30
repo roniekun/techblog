@@ -3,7 +3,7 @@ import styles from './index.module.css'
 import Navlinks from '../navigation/navlinks';
 import Socials from '../../assets/icons/soclals';
 
-const Footer = ({color, bgColor, setColor}) => {
+const Footer = ({color, bgColor, setColor, isMediumScreen}) => {
 
   const date = new Date();
     // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG
@@ -22,7 +22,7 @@ const Footer = ({color, bgColor, setColor}) => {
      className={styles.container}>
         <div className={styles.sitemap}>
         <h4>Sitemap</h4>
-        <Navlinks linkProps={{fontSize: '16px',
+        <Navlinks linkProps={{fontSize: '.8rem',
                                                 color: 'whitesmoke',
                                                 textTransform: 'uppercase',
       }}
@@ -32,21 +32,30 @@ const Footer = ({color, bgColor, setColor}) => {
        </div>
       <div className={styles.itemContainer}>
       <div className={styles.socialContainer}>
-          <h4>Let&apos;s Connect </h4>
+          <h4>
+            Let&apos;s Connect 
+            </h4>
         <Socials
-        containerProps={{gap:'14px', flexWrap: 'wrap'}}
+        containerProps={{display: isMediumScreen ? 'grid' : 'flex',
+         gridTemplateColumns: '1fr 1fr',
+           gap:'14px', 
+           flexWrap: 'wrap'}}
           linkProps={{ color: 'whitesmoke',
                                 textTransform: 'uppercase',
-                                fontSize: '16px'}}
+                                fontSize: '.8rem'}}
           displayNames={true}/>
       </div>
       <div className={styles.emailContainer}>
-      <h4>Email Me</h4>
-      <p onClick={handleEmailClick} style={{color: "white"}}>roniebenitez01@gmail.com</p>
+      <h4>Email</h4>
+      <p 
+      onClick={handleEmailClick}
+       style={{color: "white"}}
+       >
+        roniebenitez01@gmail.com
+        </p>
          </div>
       </div>
  
-
       <h5 className={styles.date}>&copy; {date.getFullYear()} All Rights Reserved </h5>
        
     </div>

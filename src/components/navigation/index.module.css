@@ -1,21 +1,20 @@
 .container{
     display: flex;
     position: fixed;
-    height: 100vh;
+    right: 0;
     top: 0;
-    width: 100vw;
-    transform: translateY(-100%);
-    background-color: black;
-    z-index: 99;
-    padding-top: 5%;
+    background-color: gray;
+    transform-origin:  top right;
     overflow: hidden;
+    border-radius: 20px;
+    z-index: 999;
+    height: auto;
 
     .content{
         display: flex;
         width: 100%;
         justify-content: space-between;
         flex-direction: column;
-        padding-block: 10%;
         align-items: center;
         height: 100%;
         padding: 5%;
@@ -30,14 +29,17 @@
             overflow: hidden;
             padding-block: 5%;
 
+
     & .title{
-        color: gray;
+        color: white;
         font-size: 14px;
         font-weight: 500;
-        padding-block: 5%;
         position: relative;
         font-family: sans-serif;
         text-transform: uppercase;
+        margin-top: 20px;
+        padding-bottom: 5%;
+
 
     }
     & .title::after{
@@ -60,12 +62,12 @@
             position: relative;
             width: 100%;
             align-self: flex-end;
-            height: 15%;
             overflow-y: hidden;
+            margin-bottom: 20px;
             
         
         &   .title{
-                color: gray;
+                color: white;
                 font-size: 14px;
                 font-weight: 500;
                 font-family: sans-serif;
