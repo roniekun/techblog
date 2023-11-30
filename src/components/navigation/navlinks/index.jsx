@@ -1,11 +1,12 @@
 import React from 'react';
 import links from "./data";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from './index.module.css';
 import { motion } from 'framer-motion';
 
-const Navlinks = ({ linkProps, containerProps, setToggleMenu, isToggleMenu }) => {
+const Navlinks = ({ linkProps, containerProps, setToggleMenu, isToggleMenu, hoverProps }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = (link) => {
     if (link) {
@@ -20,9 +21,9 @@ const Navlinks = ({ linkProps, containerProps, setToggleMenu, isToggleMenu }) =>
       {links.map((link, index) => (
         <motion.li
           key={index}
-          whileHover={{ color: 'black', }}
+          whileHover={hoverProps}
           className={styles.link}
-          style={linkProps}
+          style={{...linkProps, color: link.to === location.pathname ? 'gold' : 'white'}}
           onTap={() => handleClick(link.to)}
         >
           {link.text}

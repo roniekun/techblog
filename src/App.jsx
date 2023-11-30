@@ -72,6 +72,7 @@ const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtC
       <Footer color={color} 
       bgColor={bgColor}
       setColor={setColor}
+      setToggleMenu={setToggleMenu}
       isMediumScreen={isMediumScreen}
       />
       </div>

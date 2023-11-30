@@ -9,7 +9,7 @@
     font-size: 1rem;
     z-index: 99;
     font-weight: 400;
-    background-color: gray;
+    background-color: rgba(211, 211, 211, .3);
 
     .slider{
         position: relative;
@@ -24,41 +24,20 @@
             align-items: center;
             padding-inline: 1.5em;
 
+       
 
-            .perspectiveText{
-                transition:  .1s;
-        }
-    
         }
         .el:nth-last-of-type(1){
             background-color: black;
-            color: 'whitesmoke';
 
+            & .menu-span{
+                color: 'whitesmoke'
+            }
         }
+
+   
     }
     
-}
-
-.perspectiveText{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    transform-style: preserve-3d;
-    transition: transform  cubic-bezier(0.76, 0, 0.24, 1);
-
-    .label1{
-        transition: all  cubic-bezier(0.76, 0, 0.24, 1);
-        pointer-events: none;
-    }
-
-    .label2 {
-        position: absolute;
-        transform-origin: bottom center;
-        transform: rotateX(-90deg) translateY(50%);
-    }
 
   .button:hover .menu-span{
         

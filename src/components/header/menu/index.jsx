@@ -1,16 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './index.module.css';
+import { useEffect } from 'react';
 
 const Button = React.forwardRef(({ isToggleMenu, setToggleMenu, color, bgColor }, ref) => {
   const handleClick = () => {
         setToggleMenu(!isToggleMenu);
+
   };
 
   return (
     <motion.div
      ref={ref}
-     style={{color: isToggleMenu ? 'white' : color}}
       onClick={handleClick} 
       whileHover={{
       color: 'whitesmoke',
@@ -30,7 +31,9 @@ const Button = React.forwardRef(({ isToggleMenu, setToggleMenu, color, bgColor }
           >Menu</span>
         </div>
         <div className={styles.el}>
-          <span>Close</span>
+          <span
+          style={{color: isToggleMenu ? 'lightgray' : color}}
+          >Close</span>
         </div>
       </motion.div>
     </motion.div>

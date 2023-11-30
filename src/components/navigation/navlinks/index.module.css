@@ -5,9 +5,11 @@
 
     & .link{
         font-size: 16px;
-        text-decoration: none;
         cursor: pointer;
         list-style: none;
         user-select: none;
+     
     }
-}
+
+    }
+

@@ -3,7 +3,8 @@ import styles from './index.module.css'
 import Navlinks from '../navigation/navlinks';
 import Socials from '../../assets/icons/soclals';
 
-const Footer = ({color, bgColor, setColor, isMediumScreen}) => {
+const Footer = ({color, bgColor, setColor, isMediumScreen,
+setToggleMenu}) => {
 
   const date = new Date();
     // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG
@@ -28,6 +29,7 @@ const Footer = ({color, bgColor, setColor, isMediumScreen}) => {
       }}
       containerProps={{ gap: '14px'
       }}
+      setToggleMenu={setToggleMenu}
       />
        </div>
       <div className={styles.itemContainer}>

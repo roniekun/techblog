@@ -10,7 +10,6 @@ const Navigation = ({isToggleMenu, setToggleMenu, isMediumScreen,
   const content = useRef(null);
   const {height , width} = props
 
-
   const menu = {
 
     open: {
@@ -34,7 +33,7 @@ const Navigation = ({isToggleMenu, setToggleMenu, isMediumScreen,
 
 const item = {
   open: {
-      transition: {delay: .5, duration: .3},
+      transition: {delay: .7, duration: .3},
       opacity :1,
   },
 
@@ -73,11 +72,12 @@ const item = {
                                         alignItems: 'center', 
                                         gap: '20px'}}
         linkProps={{
-                            color: 'whitesmoke',
                             fontSize: isSmallScreen ? '32px' : '45px',
                             fontWeight: '450',
                             fontFamily: 'DM Serif Text, sans-serif',
-                            textTransform: 'capitalize'}}/>
+                            textTransform: 'capitalize'}}
+        hoverProps={{color: 'black'}}
+                            />
         </div>
       <div className={styles.socialContainer}>
         <h5 className={styles.title}>Socials</h5>

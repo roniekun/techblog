@@ -3,8 +3,10 @@
     position: fixed;
     right: 0;
     top: 0;
-    background-color: gray;
+    background-color: rgb(145, 145, 145);
+    backdrop-filter: blur(10px);
     transform-origin:  top right;
+    border: 1px solid lightgrey;
     overflow: hidden;
     border-radius: 20px;
     z-index: 999;

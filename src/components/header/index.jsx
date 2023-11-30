@@ -23,6 +23,7 @@ const Header = ({isMediumScreen, isToggleMenu, setToggleMenu,
 
   const handleScrollToTop = () => {
     setToggleMenu(false)
+    setColor('black')
     window.scrollTo(0, 0); // Scroll to the top of the page
   };
   return (
@@ -32,6 +33,7 @@ const Header = ({isMediumScreen, isToggleMenu, setToggleMenu,
       paddingInline: isMediumScreen ? '5%' : '10%'}} >
       <div className={styles.logoContainer}>
       <span>&copy;</span>
+
         <NavLink
             to='/'
             onClick={handleScrollToTop}
@@ -40,6 +42,7 @@ const Header = ({isMediumScreen, isToggleMenu, setToggleMenu,
              className={styles.logo}>
                         <h1>Code by Ronie</h1>
         </NavLink>
+
         </div>
         <div className={styles.navigation}>
         <AnimatePresence>
