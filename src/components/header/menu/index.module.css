@@ -60,7 +60,11 @@
         transform: rotateX(-90deg) translateY(50%);
     }
 
-  
+  .button:hover .menu-span{
+        
+        color: whitesmoke;
+        transition:  .3s;
+  }
 
 
 }

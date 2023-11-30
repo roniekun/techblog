@@ -13,6 +13,7 @@ const Button = React.forwardRef(({ isToggleMenu, setToggleMenu, color, bgColor }
      style={{color: isToggleMenu ? 'white' : color}}
       onClick={handleClick} 
       whileHover={{
+      color: 'whitesmoke',
       backgroundColor: 'black',
     duration: .3}}
       className={styles.button}
@@ -24,10 +25,9 @@ const Button = React.forwardRef(({ isToggleMenu, setToggleMenu, color, bgColor }
         transition={{ duration: 0.5, type: 'tween', ease: [0.76, 0, 0.24, 1] }}
       >
         <div className={styles.el}>
-          <motion.span
-           whileHover={{color: 'whitesmoke',
-         duration: .3}}
-          >Open</motion.span>
+          <span
+           className='menu-span'
+          >Menu</span>
         </div>
         <div className={styles.el}>
           <span>Close</span>
