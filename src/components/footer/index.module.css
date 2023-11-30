@@ -6,8 +6,8 @@
     position: relative;
     justify-content: flex-start;
     gap: 14px;
-    z-index: 2;
     padding: 2em;
+
 
     .sitemap{
         width: 100%;
@@ -37,6 +37,8 @@
     justify-content: space-between;
     width: 100%;
     position: relative;
+    z-index: 2;
+
 
     .socialContainer{
         display: flex;
