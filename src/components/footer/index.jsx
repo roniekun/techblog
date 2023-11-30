@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
+import {gsap} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './index.module.css'
 import Navlinks from '../navigation/navlinks';
 import Socials from '../../assets/icons/soclals';
@@ -6,7 +8,28 @@ import Socials from '../../assets/icons/soclals';
 const Footer = ({color, bgColor, setColor, isMediumScreen,
 setToggleMenu}) => {
 
+  const bottom= useRef(null);
+  const footer= useRef(null);
   const date = new Date();
+
+useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  if(bottom && footer){
+    gsap.from(bottom.current, {
+      y: -100,
+      brightness : 50,
+      scrollTrigger: {
+        trigger: footer.current,
+        start: 'top center+=200px', // Adjust as needed
+        end: 'bottom bottom', // Adjust as needed
+        scrub: true,
+      }
+     })
+    }
+}, [bottom, footer])
+
+
+
     // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG
 
     const email = 'roniebenitez01@gmail.com';
@@ -18,6 +41,9 @@ setToggleMenu}) => {
     };
 
   return (
+    <footer
+    ref={footer}
+    >
     <div
     style={{background: 'black'}}
      className={styles.container}>
@@ -61,6 +87,13 @@ setToggleMenu}) => {
       <h5 className={styles.date}>&copy; {date.getFullYear()} All Rights Reserved </h5>
        
     </div>
+    <div 
+    className={styles.bottomContainer}>
+      <h1
+       ref={bottom}
+      className={styles.text}>RONIE-KUN</h1>
+    </div>
+  </footer>
   )
 }
 
